@@ -40,7 +40,7 @@ function _theme() {
 		},
 		reset: () => {
 			set(undefined);
-			browser ? localStorage.removeItem('theme') : null;
+			if (browser) localStorage.removeItem('theme');
 		}
 	};
 }
