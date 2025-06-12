@@ -15,7 +15,6 @@ const urls = {
 
 export async function post(request: { body: { [x: string]: string } }): Promise<{ body: string; }> {
     try {
-        let api = import.meta.env.VITE_API_KEY;
         const fetch_url = base + [eval('`' + urls[request.body["api_ref"]] + '`')]
         const res = await (await fetch(fetch_url)).json()
         return {
